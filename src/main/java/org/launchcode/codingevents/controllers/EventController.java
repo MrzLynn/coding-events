@@ -17,17 +17,16 @@ import java.util.List;
 public class EventController {
     private static List<String> events = new ArrayList<>();
 
-    HashMap<String, String> events1 = new HashMap<String, String>();
-    events1.put("Strangeloop", "A Big coding evet in STL at the Stifel.");
-    events1.put("Battle of the Bagels", "A showdown for the yummiest bread in town.");
-    events1.put("Meshuggah", "BYO Pretzels");
+    @GetMapping
+    public String displayAllEvents(Model model){
+        HashMap<String, String> events1 = new HashMap<String, String>();
+        events1.put("Strangeloop", "A Big coding evet in STL at the Stifel.");
+        events1.put("Battle of the Bagels", "A showdown for the yummiest bread in town.");
+        events1.put("Meshuggah", "BYO Pretzels");
+        model.addAttribute("events1",events1);
 
-    return events1;
-//    @GetMapping
-//    public String displayAllEvents(Model model){
-//        List<String> events = new ArrayList<>();
-//        model.addAttribute("events",events);
-//        return "events/index";
+        return "events/index";
+    }
 
 
     //lives at /events/create
