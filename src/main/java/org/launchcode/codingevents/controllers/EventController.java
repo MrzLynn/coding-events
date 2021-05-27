@@ -1,5 +1,6 @@
 package org.launchcode.codingevents.controllers;
 
+import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,12 +19,19 @@ public class EventController {
         events.add("Strange Loop");
         events.add("Apple WWDC");
         events.add("SpringOne Platform");
+        model.addAttribute();
         return "events/index";
     }
     //lives at /events/create
     @GetMapping("create")
     public String renderCreateEventForm(){
         return "events/create";
+    }
+
+    @GetMapping("formTemplateName")
+    public String renderFormMethodName(Model model){
+        model.addAttribute();
+        return "pathToTemplate";
     }
 
 }
